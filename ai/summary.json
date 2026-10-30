@@ -1,0 +1,54 @@
+{
+  "name": "Opika",
+  "tagline": "AI-Led GTM Execution Partner",
+  "description": "Opika provides AI consulting services, AI implementation, AI-led GTM, AI visibility optimization (AEO/GEO), RevOps, CRM optimization, and workflow automation for growing B2B SaaS and technology companies.",
+  "url": "https://opika.co",
+  "logo": "https://opika.co/logo.png",
+  "contact": "info@opika.co",
+  "phone": "+1-480-442-7233",
+  "serviceTypes": [
+    "AI Consulting",
+    "AI Strategy & Readiness",
+    "AI Implementation",
+    "AI-Led Go-to-Market (GTM)",
+    "Revenue Operations (RevOps)",
+    "CRM & HubSpot Optimization",
+    "AI Workflow Automation",
+    "Answer Engine Optimization (AEO)",
+    "Generative Engine Optimization (GEO)",
+    "AI Search Optimization",
+    "Custom AI Agents",
+    "AI Visibility Services"
+  ],
+  "industries": [
+    "B2B SaaS",
+    "Technology Startups",
+    "Professional Services",
+    "Consultants",
+    "Coaches",
+    "Authors",
+    "Healthcare Practices",
+    "Local Service Businesses",
+    "Growth-stage Companies"
+  ],
+  "expertise": [
+    "AI Strategy",
+    "Go-to-Market Strategy",
+    "CRM Implementation",
+    "Marketing Automation",
+    "AI Agents",
+    "Business Process Automation",
+    "Thought Leadership",
+    "Content Strategy",
+    "Cold Outreach Systems",
+    "Lead Generation",
+    "Sales Automation"
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/opika-co",
+    "twitter": "https://x.com/Opika_co",
+    "instagram": "https://www.instagram.com/opika_co/"
+  },
+  "workingStyle": "Embedded execution partner",
+  "philosophy": "Technology should serve business strategy—not replace it."
+}

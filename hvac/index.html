@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opika for HVAC | More Leads, Better Follow-Up, Cleaner Growth Systems</title>
+  <meta name="description" content="Opika helps HVAC businesses build cleaner lead capture, follow-up, booking, and growth systems so demand does not leak between ad click and closed job." />
+  <link rel="canonical" href="https://opika.co/hvac/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #FF4D71;
+      --navy: #305A81;
+      --navy-dark: #212C35;
+      --navy-deep: #1a2530;
+      --orange: #FF6545;
+      --sky: #6BCEFF;
+      --grey: #C6CCD7;
+      --text: rgba(33, 44, 53, 0.78);
+      --muted: rgba(33, 44, 53, 0.5);
+      --line: rgba(48, 90, 129, 0.1);
+      --bg: #f8fafb;
+      --white: #ffffff;
+      --max: 1140px;
+      --card-bg: rgba(255,255,255,0.9);
+      --card-shadow: 0 1px 3px rgba(33,44,53,0.06), 0 8px 32px rgba(33,44,53,0.08);
+      --card-shadow-hover: 0 2px 4px rgba(33,44,53,0.06), 0 20px 56px rgba(33,44,53,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--navy-dark);
+      background: var(--bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-mesh::before {
+      content: '';
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      top: -300px;
+      right: -200px;
+      background: radial-gradient(circle, rgba(48,90,129,0.08) 0%, transparent 70%);
+      animation: driftA 28s ease-in-out infinite alternate;
+    }
+
+    .bg-mesh::after {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      bottom: -200px;
+      left: -150px;
+      background: radial-gradient(circle, rgba(255,77,113,0.07) 0%, transparent 70%);
+      animation: driftB 22s ease-in-out infinite alternate;
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(48,90,129,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(48,90,129,0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 20%, black 40%, transparent 100%);
+    }
+
+    @keyframes driftA {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(-60px, 80px) scale(1.15); }
+    }
+
+    @keyframes driftB {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(80px, -60px) scale(1.1); }
+    }
+
+    .site {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: min(calc(100% - 2.5rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(248,250,251,0.82);
+      border-bottom: 1px solid rgba(48, 90, 129, 0.06);
+      transition: box-shadow 300ms ease;
+    }
+
+    .nav-shell.scrolled {
+      box-shadow: 0 4px 24px rgba(33,44,53,0.06);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 0;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      transition: color 160ms, background 160ms;
+    }
+
+    .nav-links a:not(.btn-nav):hover {
+      color: var(--navy);
+      background: rgba(48, 90, 129, 0.06);
+    }
+
+    .btn-nav {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: 0.6rem 1.2rem !important;
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+      font-size: 0.92rem !important;
+      transition: background 200ms ease, transform 160ms ease, box-shadow 200ms ease !important;
+    }
+
+    .btn-nav:hover {
+      background: var(--navy-deep) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 8px 20px rgba(33,44,53,0.18) !important;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.6rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(33,44,53,0.18);
+    }
+
+    .btn-primary {
+      background: var(--pink);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(255,77,113,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid rgba(48,90,129,0.2);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+      background: rgba(48,90,129,0.04);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--navy-dark);
+      box-shadow: 0 4px 16px rgba(33,44,53,0.12);
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.38rem 0.82rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .label-pink {
+      background: rgba(255,77,113,0.1);
+      color: var(--pink);
+    }
+
+    .label-navy {
+      background: rgba(48,90,129,0.08);
+      color: var(--navy);
+    }
+
+    .label-white {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--navy-dark);
+    }
+
+    p { margin: 0; }
+
+    section {
+      padding: 6rem 0;
+    }
+
+    .hero {
+      padding: 2rem 0 5rem;
+      min-height: calc(100vh - 66px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 5.4vw, 5.5rem);
+      max-width: 10.2ch;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--pink);
+    }
+
+    .hero-lead {
+      font-size: clamp(1.03rem, 1.5vw, 1.2rem);
+      line-height: 1.8;
+      color: var(--text);
+      max-width: 56ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .hero-right {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-proof-card,
+    .hero-sample-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(48,90,129,0.08);
+      border-radius: 22px;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(16px);
+      padding: 1.4rem;
+    }
+
+    .hero-proof-card h3,
+    .hero-sample-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-proof-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .hero-proof-item {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+      color: var(--text);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .hero-proof-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink);
+      margin-top: 0.45rem;
+      flex-shrink: 0;
+    }
+
+    .hero-sample-box {
+      border: 1px solid rgba(48,90,129,0.08);
+      background: rgba(48,90,129,0.03);
+      border-radius: 16px;
+      padding: 1rem;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .hero-sample-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--pink);
+    }
+
+    .hero-sample-box p {
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.95rem;
+    }
+
+    .section-intro h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+    }
+
+    .section-intro p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .offer-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.7rem;
+      box-shadow: var(--card-shadow);
+      transition: transform 280ms ease, box-shadow 280ms ease;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .offer-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .offer-card p {
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 0.95rem;
+    }
+
+    .problem-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .split-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .split-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .check-mark {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: rgba(255,77,113,0.12);
+      color: var(--pink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .sample-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      position: relative;
+    }
+
+    .sample-flow::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink), var(--navy), transparent);
+      opacity: 0.28;
+    }
+
+    .flow-card {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.55rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .flow-num {
+      display: block;
+      font-family: 'DM Serif Display', serif;
+      color: var(--pink);
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 0.9rem;
+    }
+
+    .flow-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.07rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .flow-card p {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+
+    .sample-demo {
+      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62));
+      border: 1px solid rgba(48,90,129,0.08);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .sample-demo-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .sample-demo-side {
+      background: rgba(48,90,129,0.04);
+      border: 1px solid rgba(48,90,129,0.08);
+      border-radius: 18px;
+      padding: 1.2rem;
+    }
+
+    .sample-demo-side h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .sample-demo-side p {
+      color: var(--text);
+      font-size: 0.92rem;
+      line-height: 1.68;
+    }
+
+    .sample-demo-main {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(48,90,129,0.08);
+      border-radius: 18px;
+      padding: 1.35rem;
+    }
+
+    .sample-demo-main h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .sample-demo-block {
+      display: grid;
+      gap: 0.85rem;
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 0.95rem;
+    }
+
+    .sample-demo-kicker {
+      color: var(--pink);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .sample-demo-quote {
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--pink);
+      background: rgba(255,77,113,0.05);
+      border-radius: 0 14px 14px 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--navy-dark);
+    }
+
+    .cta-section {
+      padding: 5rem 0;
+    }
+
+    .cta-panel {
+      background: var(--navy-dark);
+      border-radius: 32px;
+      padding: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-panel::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      right: -200px;
+      top: -200px;
+      background: radial-gradient(circle, rgba(255,77,113,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-panel::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      left: -120px;
+      bottom: -150px;
+      background: radial-gradient(circle, rgba(107,206,255,0.08), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cta-panel h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--white);
+      margin: 0.9rem 0 0.75rem;
+    }
+
+    .cta-panel p {
+      color: rgba(255,255,255,0.74);
+      font-size: 1.06rem;
+      line-height: 1.75;
+      max-width: 54ch;
+    }
+
+    .cta-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 220ms ease;
+    }
+
+    .cta-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cta-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 26, 33, 0.52);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .cta-modal-dialog {
+      position: relative;
+      width: min(1320px, 100%);
+      height: min(90vh, 860px);
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(48,90,129,0.08);
+      border-radius: 28px;
+      box-shadow: 0 24px 80px rgba(18,26,33,0.24);
+      overflow: hidden;
+      transform: translateY(16px) scale(0.98);
+      transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cta-modal.open .cta-modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .cta-modal-close {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(48,90,129,0.08);
+      color: var(--navy-dark);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 180ms ease, transform 180ms ease;
+      z-index: 4;
+    }
+
+    .cta-modal-head {
+      padding: 1rem 1.25rem 0.85rem;
+      border-bottom: 1px solid rgba(48,90,129,0.08);
+      background: rgba(255,255,255,0.96);
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-modal-head h2 {
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      line-height: 1.08;
+    }
+
+    .cta-modal-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+      min-height: 0;
+      flex: 1;
+    }
+
+    .cta-calendar-side {
+      padding: 1rem 0 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      order: 1;
+    }
+
+    .cta-calendar-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 0.5rem 0.75rem 0.25rem;
+    }
+
+    .cta-calendar-top h3,
+    .cta-form-side h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.04rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .cta-side-copy {
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-top: 0.18rem;
+    }
+
+    .calendar-shell {
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(48,90,129,0.1);
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(33,44,53,0.08);
+      flex: 1;
+      min-height: 0;
+    }
+
+    .calendar-shell iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 660px;
+      border: 0;
+    }
+
+    .cta-form-side {
+      padding: 1rem;
+      border-left: 1px solid rgba(48,90,129,0.08);
+      background: rgba(248,250,251,0.78);
+      overflow: auto;
+      order: 2;
+    }
+
+    .cta-form-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(48,90,129,0.08);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 6px 22px rgba(33,44,53,0.05);
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.9rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.38rem;
+    }
+
+    .field label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy-dark);
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(48,90,129,0.14);
+      border-radius: 12px;
+      padding: 0.85rem 0.95rem;
+      font: inherit;
+      color: var(--navy-dark);
+      background: rgba(255,255,255,0.96);
+      transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: rgba(255,77,113,0.45);
+      box-shadow: 0 0 0 4px rgba(255,77,113,0.08);
+      background: #fff;
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 120px;
+      max-height: 220px;
+    }
+
+    .cta-form-note {
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-copy {
+      color: #000000;
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    [data-delay="1"] { transition-delay: 80ms; }
+    [data-delay="2"] { transition-delay: 160ms; }
+    [data-delay="3"] { transition-delay: 240ms; }
+    [data-delay="4"] { transition-delay: 320ms; }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-layout,
+      .problem-solution,
+      .sample-demo-grid,
+      .cta-inner,
+      .cta-modal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sample-flow {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sample-flow::before {
+        display: none;
+      }
+
+      .cta-calendar-side {
+        padding: 0.85rem 0.85rem 0.5rem;
+      }
+
+      .cta-form-side {
+        border-left: none;
+        border-top: 1px solid rgba(48,90,129,0.08);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 0 4rem;
+      }
+
+      .hero h1 {
+        font-size: 2.9rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      section {
+        padding: 4.75rem 0;
+      }
+
+      .sample-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-panel {
+        padding: 2.5rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        gap: 0.25rem;
+      }
+
+      .cta-modal {
+        padding: 0.5rem;
+        align-items: flex-end;
+      }
+
+      .cta-modal-dialog {
+        width: 100%;
+        height: min(94vh, 980px);
+        border-radius: 24px 24px 0 0;
+      }
+
+      .calendar-shell {
+        min-height: 420px;
+      }
+
+      .calendar-shell iframe {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.55rem;
+      }
+
+      .split-card,
+      .offer-card,
+      .flow-card,
+      .hero-proof-card,
+      .hero-sample-card,
+      .sample-demo {
+        padding: 1.3rem;
+      }
+
+      .cta-panel {
+        padding: 2rem;
+      }
+
+      .calendar-shell {
+        min-height: 360px;
+      }
+
+      .calendar-shell iframe {
+        min-height: 360px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+
+<div class="site">
+
+  <div class="nav-shell" id="nav-shell">
+    <div class="container">
+      <nav>
+        <a class="brand" href="/" aria-label="Opika home">
+          <img src="logo.png" alt="Opika" onerror="this.style.display='none'">
+        </a>
+        <div class="nav-links">
+          <a href="#offer">What we help build</a>
+          <a href="#flow">How it works</a>
+          <a href="#sample">Sample</a>
+          <!-- <a href="/" title="Back to main site">Main site</a> -->
+          <a href="#" class="btn-nav" data-open-cta>Schedule a Call</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-left">
+            <div class="reveal-left">
+              <span class="label label-pink">For HVAC businesses</span>
+            </div>
+            <h1 class="reveal-left" data-delay="1">More <em>Leads</em> Captured. Better Follow-Up. Less Revenue Leakage.</h1>
+            <p class="hero-lead reveal-left" data-delay="2">
+              HVAC businesses do not usually have a lead problem. They have a follow-up, booking, and system problem. Opika helps build cleaner growth infrastructure so more of the demand you already generate actually turns into booked jobs and real revenue.
+            </p>
+            <div class="hero-actions reveal-left" data-delay="3">
+              <a class="btn btn-primary" href="#" data-open-cta>Book an HVAC Growth Call</a>
+              <a class="btn btn-outline" href="#sample">See a sample flow</a>
+            </div>
+          </div>
+
+          <div class="hero-right reveal-right" data-delay="2">
+            <div class="hero-proof-card">
+              <h3>What usually breaks for HVAC companies</h3>
+              <div class="hero-proof-list">
+                <div class="hero-proof-item"><span class="hero-proof-dot"></span><span>Leads come in from ads, referrals, or search, but too many slip through slow or inconsistent follow-up.</span></div>
+                <div class="hero-proof-item"><span class="hero-proof-dot"></span><span>The booking flow is unclear, especially after-hours or when office staff are stretched.</span></div>
+                <div class="hero-proof-item"><span class="hero-proof-dot"></span><span>There is no clean system connecting traffic, lead capture, qualification, scheduling, and reporting.</span></div>
+              </div>
+            </div>
+
+            <div class="hero-sample-card">
+              <h3>What we help create instead</h3>
+              <div class="hero-sample-box">
+                <div class="hero-sample-label">Example</div>
+                <p>A clearer landing page, stronger lead routing, faster response workflow, better follow-up, and a tighter system from ad click or phone call to booked appointment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer">
+      <div class="container">
+        <div class="section-intro reveal">
+          <span class="label label-navy">What we help build</span>
+          <h2>Not just more activity. A cleaner HVAC growth system.</h2>
+          <p>We help HVAC operators tighten the path from demand to booked work so leads do not disappear in the gaps between marketing, office operations, and follow-up.</p>
+        </div>
+
+        <div class="offer-grid">
+          <div class="offer-card reveal" data-delay="1">
+            <h3>Lead capture and conversion pages</h3>
+            <p>Sharper landing pages and entry flows that make it easier for prospects to contact, request service, or book the next step without friction.</p>
+          </div>
+          <div class="offer-card reveal" data-delay="2">
+            <h3>Follow-up and booking systems</h3>
+            <p>Cleaner response logic across calls, forms, and messages so opportunities do not die because the handoff was slow or unclear.</p>
+          </div>
+          <div class="offer-card reveal" data-delay="3">
+            <h3>Visibility and optimization</h3>
+            <p>Better clarity on where leads are coming from, where they leak, and what part of the flow needs improvement first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-intro reveal">
+          <span class="label label-navy">The gap we usually see</span>
+          <h2>Demand exists. The system underneath is the problem.</h2>
+          <p>Many HVAC companies are already paying for traffic or benefiting from local demand. The issue is that the business often lacks a clean operating layer to capture and convert that demand consistently.</p>
+        </div>
+
+        <div class="problem-solution">
+          <div class="split-card reveal" data-delay="1">
+            <h3>What HVAC businesses often have</h3>
+            <div class="check-list">
+              <div class="check-item"><span class="check-mark">+</span><span>Some existing demand from Google, referrals, local SEO, or paid ads</span></div>
+              <div class="check-item"><span class="check-mark">+</span><span>A strong service team and real operational capability</span></div>
+              <div class="check-item"><span class="check-mark">+</span><span>Good closers once the right conversation actually happens</span></div>
+              <div class="check-item"><span class="check-mark">+</span><span>Enough lead flow to justify improving conversion and follow-up</span></div>
+            </div>
+          </div>
+
+          <div class="split-card reveal" data-delay="2">
+            <h3>What is usually missing</h3>
+            <div class="check-list">
+              <div class="check-item"><span class="check-mark">+</span><span>A clear path from lead to booked service call</span></div>
+              <div class="check-item"><span class="check-mark">+</span><span>Consistent after-hours or overflow response handling</span></div>
+              <div class="check-item"><span class="check-mark">+</span><span>Better lead routing, follow-up, and visibility</span></div>
+              <div class="check-item"><span class="check-mark">+</span><span>A repeatable system instead of depending on whoever remembered to follow up</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="container">
+        <div class="section-intro reveal">
+          <span class="label label-navy">How it works</span>
+          <h2>We help tighten the path from inquiry to booked job.</h2>
+          <p>For HVAC, the goal is usually not abstract marketing theory. It is getting more of the demand you already paid for to actually move through the system.</p>
+        </div>
+
+        <div class="sample-flow">
+          <div class="flow-card reveal" data-delay="1">
+            <span class="flow-num">01</span>
+            <h3>Map the leakage</h3>
+            <p>Identify where demand is getting lost across calls, forms, scheduling, or follow-up.</p>
+          </div>
+          <div class="flow-card reveal" data-delay="2">
+            <span class="flow-num">02</span>
+            <h3>Build the missing layer</h3>
+            <p>Create or improve the landing pages, lead capture, routing, and booking flow that support conversion.</p>
+          </div>
+          <div class="flow-card reveal" data-delay="3">
+            <span class="flow-num">03</span>
+            <h3>Support response systems</h3>
+            <p>Make it easier for office operations and marketing to work together instead of operating as separate silos.</p>
+          </div>
+          <div class="flow-card reveal" data-delay="4">
+            <span class="flow-num">04</span>
+            <h3>Improve over time</h3>
+            <p>Use live feedback to refine the pages, lead handling, and conversion flow based on what is actually happening.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sample">
+      <div class="container">
+        <div class="section-intro reveal">
+          <span class="label label-navy">Sample direction</span>
+          <h2>What an HVAC-facing Opika build can look like.</h2>
+          <p>This is not a finished deliverable. It is an example of the type of structured, conversion-aware system we can help build around an HVAC operator’s growth flow.</p>
+        </div>
+
+        <div class="sample-demo reveal">
+          <div class="sample-demo-grid">
+            <div class="sample-demo-side">
+              <h3>Possible inputs</h3>
+              <p>
+                Website, service areas, offer mix, current lead sources, booking flow, call handling process, office follow-up logic, and the part of the funnel that feels most broken.
+              </p>
+            </div>
+
+            <div class="sample-demo-main">
+              <h3>Sample HVAC growth concept</h3>
+              <div class="sample-demo-block">
+                <div class="sample-demo-kicker">Positioning example</div>
+                <p>
+                  You may not need more leads first. You may need a better path for the leads you already have — from first click or call to qualified appointment and closed work.
+                </p>
+
+                <div class="sample-demo-quote">
+                  “The opportunity is often not at the top of the funnel. It is in how cleanly the business handles what is already arriving.”
+                </div>
+
+                <p>
+                  That could mean a better landing page, faster lead routing, clearer call-to-action, a stronger booking handoff, improved follow-up, or a more visible reporting layer so decisions are based on real bottlenecks.
+                </p>
+
+                <p>
+                  This is where Opika usually helps: not by replacing the HVAC operator’s service capability, but by building the infrastructure that helps demand convert more reliably.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="cta-inner">
+            <div>
+              <span class="label label-white">For HVAC</span>
+              <h2>Generating demand, but not happy with how much actually books?</h2>
+              <p>We can look at where the current flow is breaking — landing pages, lead routing, follow-up, booking, or reporting — and discuss what a stronger HVAC growth system could look like.</p>
+            </div>
+            <a class="btn btn-white" href="#" data-open-cta>Start the conversation →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="footer-copy">© <span id="year"></span> Opika. Built for modern GTM execution.</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="cta-modal" id="ctaModal" aria-hidden="true">
+  <div class="cta-modal-backdrop" data-close-cta></div>
+
+  <div class="cta-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="ctaModalTitle">
+    <button class="cta-modal-close" type="button" aria-label="Close" data-close-cta>×</button>
+
+    <div class="cta-modal-head">
+      <h2 id="ctaModalTitle">Pick a time. Add context if helpful.</h2>
+    </div>
+
+    <div class="cta-modal-layout">
+      <div class="cta-calendar-side">
+        <div class="cta-calendar-top">
+          <div>
+            <h3>Choose a time</h3>
+            <p class="cta-side-copy">Use the scheduler below.</p>
+          </div>
+          <a class="btn btn-outline" href="https://calendly.com/YOUR-CALENDLY-LINK/30min" target="_blank" rel="noopener noreferrer">Open full screen</a>
+        </div>
+
+        <div class="calendar-shell">
+          <iframe
+            src="https://calendly.com/YOUR-CALENDLY-LINK/30min?hide_gdpr_banner=1"
+            title="Book a call with Opika"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="cta-form-side">
+        <div class="cta-form-card">
+          <h3>Optional context</h3>
+
+          <form class="cta-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" />
+            </div>
+
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Your HVAC company" />
+            </div>
+
+            <div class="field">
+              <label for="help">What part of the growth / booking flow feels broken?</label>
+              <textarea
+                id="help"
+                name="help"
+                rows="5"
+                placeholder="Example: We get leads from Google and referrals, but follow-up is inconsistent and too many inquiries do not become booked jobs."
+              ></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="New Opika HVAC inquiry" />
+
+            <button class="btn btn-primary" type="submit">Send details</button>
+            <p class="cta-form-note">You can submit this before or after booking. Both work.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navShell = document.getElementById('nav-shell');
+  window.addEventListener('scroll', () => {
+    navShell.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => revealObserver.observe(el));
+
+  const ctaModal = document.getElementById('ctaModal');
+  const openCtaButtons = document.querySelectorAll('[data-open-cta]');
+  const closeCtaButtons = document.querySelectorAll('[data-close-cta]');
+
+  function openCtaModal() {
+    ctaModal.classList.add('open');
+    ctaModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeCtaModal() {
+    ctaModal.classList.remove('open');
+    ctaModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  openCtaButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCtaModal();
+    });
+  });
+
+  closeCtaButtons.forEach(btn => {
+    btn.addEventListener('click', closeCtaModal);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && ctaModal.classList.contains('open')) {
+      closeCtaModal();
+    }
+  });
+</script>
+
+</body>
+</html>

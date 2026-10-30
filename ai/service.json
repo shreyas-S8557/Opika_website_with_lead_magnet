@@ -1,0 +1,85 @@
+{
+  "organization": "Opika",
+  "baseUrl": "https://opika.co",
+  "contactEmail": "info@opika.co",
+  "services": [
+    {
+      "name": "AI Consulting",
+      "description": "Strategic AI readiness assessment, capability evaluation, and roadmap development",
+      "categories": ["strategy", "assessment", "ai-strategy"]
+    },
+    {
+      "name": "AI Implementation",
+      "description": "End-to-end AI solution development, integration, and deployment",
+      "categories": ["implementation", "development", "ai-implementation"]
+    },
+    {
+      "name": "AI-Led GTM",
+      "description": "Go-to-market strategy powered by AI and automation across positioning, outreach, content, CRM, analytics, and sales",
+      "categories": ["gtm", "strategy", "execution"]
+    },
+    {
+      "name": "Answer Engine Optimization (AEO)",
+      "description": "Optimize visibility and citability in ChatGPT, Claude, Perplexity, and AI-powered search engines",
+      "categories": ["seo", "optimization", "aeo", "ai-visibility"]
+    },
+    {
+      "name": "Generative Engine Optimization (GEO)",
+      "description": "Improve how AI models understand, cite, and recommend your business through schema markup and content optimization",
+      "categories": ["seo", "optimization", "geo", "ai-visibility"]
+    },
+    {
+      "name": "Revenue Operations (RevOps)",
+      "description": "Revenue operations strategy, CRM optimization, workflow implementation, and sales enablement",
+      "categories": ["operations", "revops", "sales"]
+    },
+    {
+      "name": "HubSpot CRM Optimization",
+      "description": "CRM strategy, implementation, workflow design, and ongoing optimization",
+      "categories": ["crm", "hubspot", "operations"]
+    },
+    {
+      "name": "AI Workflow Automation",
+      "description": "Custom automation for outreach, content, analytics, lead qualification, and business processes",
+      "categories": ["automation", "workflows"]
+    },
+    {
+      "name": "Custom AI Agents",
+      "description": "Custom AI agents for research, lead qualification, customer support, content generation, and operational tasks",
+      "categories": ["ai", "automation", "agents"]
+    },
+    {
+      "name": "Thought Leadership",
+      "description": "Founder and executive thought leadership programs, positioning, and content strategy",
+      "categories": ["content", "strategy", "branding"]
+    }
+  ],
+  "targetIndustries": [
+    "B2B SaaS",
+    "Technology Startups",
+    "Professional Services",
+    "Consultants",
+    "Coaches",
+    "Authors",
+    "Healthcare Practices",
+    "Local Service Businesses",
+    "Growth-stage Companies"
+  ],
+  "workingStyle": "Embedded execution partner",
+  "philosophy": "Technology should serve business strategy—not replace it. We prioritize solving high-leverage problems before recommending tools or automation.",
+  "deliverables": [
+    "GTM systems",
+    "Sales workflows",
+    "Marketing workflows",
+    "CRM systems",
+    "AI-powered research",
+    "Competitive intelligence",
+    "Content engines",
+    "Thought leadership programs",
+    "AI agents",
+    "Lead qualification systems",
+    "Outreach systems",
+    "Reporting dashboards",
+    "Operational automations"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "faqs": [
+    {
+      "question": "What is AI-led GTM?",
+      "answer": "AI-led GTM is using artificial intelligence to optimize your go-to-market strategy. We help businesses identify high-leverage opportunities and automate execution across positioning, outreach, content, CRM, analytics, and sales automation."
+    },
+    {
+      "question": "How does Opika help with AI implementation?",
+      "answer": "We handle end-to-end AI implementation: strategy development, vendor selection, custom AI agent development, workflow automation, team training, and ongoing optimization for your specific business needs."
+    },
+    {
+      "question": "What is Answer Engine Optimization (AEO)?",
+      "answer": "AEO is optimizing your content for AI-powered search engines like ChatGPT, Claude, Perplexity, and Google AI. It involves structured data, clear answers, citations, and content format optimization to improve visibility in AI-generated responses."
+    },
+    {
+      "question": "What is Generative Engine Optimization (GEO)?",
+      "answer": "GEO is optimizing your business visibility in generative AI outputs. This includes improving how AI models understand, cite, and recommend your services through better schema markup, content structure, and entity development."
+    },
+    {
+      "question": "Do you work with small businesses?",
+      "answer": "Yes. We work with B2B SaaS companies, technology startups, professional services firms, coaches, consultants, authors, healthcare practices, local service businesses, and growth-stage companies. Our services scale to your business size and needs."
+    },
+    {
+      "question": "What is your process?",
+      "answer": "Our process: Strategy & Research → Positioning & Messaging → Implementation & Execution → Optimization → Ongoing Support. We start with understanding your business, goals, constraints, and growth bottlenecks before recommending solutions."
+    },
+    {
+      "question": "What is Revenue Operations (RevOps)?",
+      "answer": "RevOps is aligning your sales, marketing, and operations around revenue goals. We help implement RevOps strategies, optimize your CRM, build workflows, and create systems that drive predictable revenue growth."
+    },
+    {
+      "question": "Can you help us with content strategy?",
+      "answer": "Yes. We develop content strategies that serve your GTM goals, create thought leadership programs, build content engines, and optimize content for both traditional search and AI discovery (AEO/GEO)."
+    },
+    {
+      "question": "Do you build custom AI agents?",
+      "answer": "Yes. We design and build custom AI agents for research, lead qualification, customer support, outreach, and other business-critical functions tailored to your specific needs."
+    },
+    {
+      "question": "How do we get started?",
+      "answer": "Schedule a GTM intake call with us. We'll discuss your business goals, current challenges, growth opportunities, and determine whether and how we can help you build practical AI-enabled growth systems."
+    }
+  ]
+}

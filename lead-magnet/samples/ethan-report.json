@@ -1,0 +1,180 @@
+{
+  "business": {
+    "name": "Ethan Construction",
+    "industry": "Residential remodeling",
+    "location": "Southlake, TX; serves Grapevine, Keller and nearby",
+    "services": "Kitchen, bathroom and whole-home remodeling"
+  },
+  "personal_note": "Ethan, you said most of your work comes from referrals and you'd like to be found on Google. The good news: the expertise is already on your site. It just isn't being seen yet.",
+  "headline": "Ethan Construction has the expertise. Let's make sure people find it.",
+  "intro": "Ethan Construction already has a strong foundation: clear remodeling services, practical know-how and real local expertise. We found three opportunities to make more of what is already built.",
+  "strengths": [
+    {
+      "title": "Practical expertise",
+      "body": "Kitchen and bathroom pages answer real homeowner questions."
+    },
+    {
+      "title": "Local knowledge",
+      "body": "Southlake and Grapevine pages show genuine familiarity with the area."
+    },
+    {
+      "title": "Useful resources",
+      "body": "The Material Library helps homeowners choose with confidence."
+    }
+  ],
+  "sources_reviewed": [
+    "your website",
+    "Google Business Profile",
+    "three local competitors",
+    "SEMrush search data"
+  ],
+  "opportunities": [
+    {
+      "name": "Get discovered",
+      "summary": "The expertise is on the site, but Google and AI assistants barely see it.",
+      "kicker": "Visibility",
+      "title": "The expertise is there. It isn't being discovered yet.",
+      "body": "Ethan's website explains remodeling better than most. Yet very few people are being shown it: **the issue is visibility, not expertise.**",
+      "answers_priority": "Getting found on Google & AI",
+      "impact": "High",
+      "effort": "Low",
+      "stats": [
+        {
+          "value": "5",
+          "label": "Organic keywords"
+        },
+        {
+          "value": "0",
+          "label": "Est. organic traffic"
+        },
+        {
+          "value": "0",
+          "label": "AI visibility"
+        },
+        {
+          "value": "0",
+          "label": "AI citations"
+        }
+      ],
+      "stats_source": "Source: SEMrush, October 2026.",
+      "findings": [
+        {
+          "title": "Hours don't match across sources",
+          "body": "The website says 8–6 on weekdays; Google shows 9–5, which lowers search engines' confidence."
+        },
+        {
+          "title": "Listings describe a different business",
+          "body": "Some directories mention commercial work, roofing and painting rather than residential remodeling."
+        },
+        {
+          "title": "Links come from unrelated sites",
+          "body": "Most of the 466 backlinks SEMrush reports have nothing to do with remodeling."
+        }
+      ],
+      "first_steps": [
+        "Make hours, services and areas identical on the website and Google.",
+        "Correct directory listings that describe commercial or roofing work.",
+        "Add structured data and answer the top ten homeowner questions."
+      ],
+      "opportunity_title": "One consistent version of Ethan across the web",
+      "opportunity_body": "Align the basics everywhere Ethan appears so homeowners, Google and AI assistants can find the expertise already on the site."
+    },
+    {
+      "name": "Show the proof",
+      "summary": "Make finished projects as visible as the know-how.",
+      "kicker": "Proof",
+      "title": "The proof should match the expertise.",
+      "body": "Remodeling is a high-trust decision. Ethan explains the work well, but completed projects and happy homeowners are hard to see.",
+      "answers_priority": "More reviews & trust",
+      "impact": "High",
+      "effort": "Medium",
+      "comparison_title": "Public reviews observed",
+      "comparison": [
+        {
+          "label": "Ethan Construction",
+          "value": 1,
+          "highlight": true
+        },
+        {
+          "label": "Swanson Renovations",
+          "value": 23
+        },
+        {
+          "label": "Lakeview Cabinetry",
+          "value": 45
+        },
+        {
+          "label": "Signature Home Services",
+          "value": 55
+        }
+      ],
+      "comparison_caption": "Review count isn't quality, but it is what homeowners compare.",
+      "findings": [
+        {
+          "title": "Reviews aren't part of handover",
+          "body": "There is no routine moment where finished clients are asked for a review."
+        },
+        {
+          "title": "Projects aren't shown as stories",
+          "body": "Before-and-after photos and the decisions behind them rarely reach the website."
+        }
+      ],
+      "first_steps": [
+        "Text a review link to the last five happy clients this week.",
+        "Add a review request to the project sign-off checklist.",
+        "Publish one kitchen remodel as a short before-and-after story."
+      ],
+      "opportunity_title": "Make proof a by-product of every project",
+      "opportunity_body": "Ask for a review and capture a short project story at every handover, so proof grows with the work."
+    },
+    {
+      "name": "Reuse every project",
+      "summary": "Capture photos, decisions and lessons once, then use them everywhere.",
+      "kicker": "Project knowledge",
+      "title": "Every project can keep creating value after it is finished.",
+      "body": "Every remodel produces photos, decisions and solutions. Most of it is useful long after the job is done.",
+      "answers_priority": "",
+      "impact": "Medium",
+      "effort": "Medium",
+      "findings": [
+        {
+          "title": "Knowledge stays with the crew",
+          "body": "How a tricky layout or material problem was solved isn't written down anywhere reusable."
+        },
+        {
+          "title": "Content starts from scratch",
+          "body": "Marketing is created separately instead of drawing on the work itself."
+        }
+      ],
+      "example": {
+        "title": "A kitchen remodel in Keller",
+        "body": "A homeowner wants a larger island. The layout, wiring and flooring decisions become a portfolio story, an FAQ answer and a sales reference."
+      },
+      "first_steps": [
+        "Create a one-page end-of-project form: photos, decisions, one problem solved.",
+        "Store each project in one shared folder, named by type and town.",
+        "Turn one finished project into a homeowner FAQ answer each month."
+      ],
+      "opportunity_title": "Capture the important parts once, reuse them",
+      "opportunity_body": "A simple end-of-project routine turns each job into material for sales, the team, search and AI."
+    }
+  ],
+  "next_steps": [
+    {
+      "title": "Fix the visibility foundation",
+      "body": "Align Ethan's public information and strengthen relevant authority.",
+      "timeframe": "Days 1–30"
+    },
+    {
+      "title": "Make proof part of every handover",
+      "body": "Build reviews and project stories into project completion.",
+      "timeframe": "Days 31–60"
+    },
+    {
+      "title": "Capture and reuse project knowledge",
+      "body": "Turn each finished job into content for customers, sales and search.",
+      "timeframe": "Days 61–90"
+    }
+  ],
+  "closing": "Ethan already has the expertise and does the work; the opportunity is to make both work harder for the business."
+}
